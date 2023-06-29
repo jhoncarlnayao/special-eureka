@@ -1,0 +1,2857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>Document</title>
+  <style>
+    body {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      height: 800vh;
+      width: 100%;
+      background-image: url(forda\ lot\ 38.png);
+      background-position: center;
+      background-size: cover;
+      image-rendering: optimizeQuality;
+      background-attachment: fixed;
+      scroll-behavior: smooth;
+      background-repeat: no-repeat;
+      overflow-x: hidden;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /*NAVIGATION BAR */
+    .Navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      background: transparent;
+      backdrop-filter: blur(3px);
+    }
+
+
+
+    ul.Navigation {
+      position: flex;
+      justify-content: center;
+      align-items: center;
+      height: 59px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #eed6c5a0;
+
+    }
+
+    ul.Navigation li {
+      position: relative;
+      top: -100px;
+      display: inline-block;
+      left: 520px;
+      margin-left: 6px;
+      width: 100px;
+      height: 40px;
+      padding-top: 13px;
+      list-style: none;
+      text-align: center;
+      text-transform: capitalize;
+      font-family: System-ui;
+      font-weight: 999;
+      font-size: 16px;
+    }
+
+    ul.Navigation li a {
+      display: block;
+      padding: 25px;
+      text-decoration: none;
+      color: #fee8d7f7;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    ul.Navigation li a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: White;
+      /* Change the color as desired */
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    ul.Navigation li a:hover {
+      transform: translateY(-5px);
+    }
+
+    ul.Navigation li a:hover::after {
+      transform: scaleX(1);
+    }
+
+    ul {
+      font-family: arial bold;
+      color: #fee8d7f7;
+    }
+
+    h1 {
+      position: relative;
+      top: -12px;
+      right: -30px;
+      font-size: 25px;
+      text-transform: capitalize;
+      font-family: System-ui;
+      font-weight: 999;
+    }
+
+    /* END OF NAVIGATION BAR */
+
+
+    /* BUTTON */
+    .box {
+      width: 140px;
+      top: -20pc;
+      left: 28pc;
+      height: auto;
+      float: left;
+      transition: .5s linear;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      padding: 15px;
+      text-align: center;
+      margin: 0 5px;
+      background: transparent;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: #fee8d7f7;
+
+    }
+
+    .box:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      width: 100%;
+      border-bottom: 4px solid transparent;
+      border-left: 4px solid transparent;
+      box-sizing: border-box;
+      transform: translateX(100%);
+    }
+
+    .box:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      border-top: 4px solid transparent;
+      border-right: 4px solid transparent;
+      box-sizing: border-box;
+      transform: translateX(-100%);
+    }
+
+    .box:hover {
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.507);
+    }
+
+    .box:hover:before {
+      border-color: white;
+      height: 100%;
+      transform: translateX(0);
+      transition: .3s transform linear, .3s height linear .3s;
+    }
+
+    .box:hover:after {
+      border-color: wheat;
+      height: 100%;
+      transform: translateX(0);
+      transition: .3s transform linear, .3s height linear .5s;
+    }
+
+    button {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background: transparent;
+    }
+
+    /* BUTTON */
+
+
+    /* WORD AND SUCH */
+    h2 {
+      position: absolute;
+      top: 11pc;
+      left: 2pc;
+      font-family: monospace;
+      font-size: 28px;
+      color: #fee8d7f7;
+    }
+
+    p {
+      position: absolute;
+      top: 14pc;
+      left: 2pc;
+      font-family: monospace;
+      color: #fee8d7f7;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    /* CONTAINER ADJUST BOTH MENU*/
+    .card-container {
+      position: relative;
+      top: 33pc;
+      left: 7pc;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* 4 columns */
+      grid-template-rows: repeat(2, 1fr);
+      /* 2 rows */
+      grid-gap: 70px;
+      /* Adjust the gap between cards as needed */
+      max-width: 1000px;
+      grid-template-rows: repeat(2, 1fr);
+      margin: 6pc auto;
+      /* Adjust the margin value as needed */
+    }
+
+    .card-container2 {
+      position: relative;
+      top: 17pc;
+      left: 7pc;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* 4 columns */
+      /* 2 rows */
+      grid-gap: 70px;
+      /* Adjust the gap between cards as needed */
+      max-width: 1000px;
+      margin: 6pc auto;
+      /* Adjust the margin value as needed */
+    }
+
+    .card-container3 {
+      grid-gap: 70px;
+      position: relative;
+      top: 19.9pc;
+      left: 7pc;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* 4 columns */
+      grid-template-rows: repeat(2, 1fr);
+      /* 2 rows */
+      /* Adjust the gap between cards as needed */
+      max-width: 1000px;
+      margin: 6pc auto;
+      /* Adjust the margin value as needed */
+    }
+
+    .card-container4 {
+      position: relative;
+      top: 6pc;
+      left: 7pc;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* 4 columns */
+      grid-template-rows: repeat(2, 1fr);
+      /* 2 rows */
+      grid-gap: 70px;
+      /* Adjust the gap between cards as needed */
+      max-width: 1000px;
+      grid-template-rows: repeat(2, 1fr);
+      margin: 6pc auto;
+      /* Adjust the margin value as needed */
+    }
+
+    .card-container5 {
+      position: relative;
+      top: -8pc;
+      left: 7pc;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* 4 columns */
+      /* 2 rows */
+      grid-gap: 70px;
+      /* Adjust the gap between cards as needed */
+      max-width: 1000px;
+      margin: 6pc auto;
+      /* Adjust the margin value as needed */
+    }
+
+
+
+
+
+
+    /* CONTAINER ADJUST BOTH MENU*/
+
+    /* ORDER MENU  */
+    .card {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c1.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .card-details {
+      color: transparent;
+      /* Hide the text by default */
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card:hover .card-details {
+      color: black;
+      /* Change the text color on hover */
+    }
+
+    .card .text-body {
+      opacity: 0;
+      /* Hide the text by default */
+      transition: opacity 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card:hover .text-body {
+      opacity: 1;
+      /* Show the text on hover */
+    }
+
+
+
+    .card-button {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card:hover .card-button {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+
+
+
+    /* ORDER MENU */
+
+
+
+    h3 {
+      color: black;
+      font-size: xx-large;
+      position: absolute;
+      top: 80pc;
+      left: 50pc;
+    }
+
+    h6 {
+      position: relative;
+      top: 28pc;
+      left: 140px;
+      color: #fee8d7f7;
+      padding: 15px;
+      margin: 0 5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-family: system-ui;
+      font-size: 5pc;
+      letter-spacing: 13px;
+    }
+
+    h4 {
+      font-size: 1%;
+      position: absolute;
+      top: 1px;
+
+
+    }
+
+    /*ORDER MENU 2*/
+    .card2 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background-image: url(c2.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+      transition: transform 0.4s ease-in-out;
+    }
+
+
+
+    .card-details2 {
+      color: transparent;
+      /* Hide the text by default */
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card2:hover .card-details2 {
+      color: black;
+      /* Change the text color on hover */
+    }
+
+    .card2 .text-body2 {
+      opacity: 0;
+      /* Hide the text by default */
+      transition: opacity 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card2:hover .text-body2 {
+      opacity: 1;
+      /* Show the text on hover */
+    }
+
+
+
+    .card-button2 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card2:hover .card-button2 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button2:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button2:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button2:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body2 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title2 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card2:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card2.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 2*/
+
+
+    /* ORDER MENU 3 */
+    .card3 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c3.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .card-details3 {
+      color: transparent;
+      /* Hide the text by default */
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card3:hover .card-details3 {
+      color: black;
+      /* Change the text color on hover */
+    }
+
+    .card3 .text-body3 {
+      opacity: 0;
+      /* Hide the text by default */
+      transition: opacity 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card3:hover .text-body3 {
+      opacity: 1;
+      /* Show the text on hover */
+    }
+
+
+
+    .card-button3 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card3:hover .card-button3 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button3:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button3:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button3:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body3 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title3 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card3:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card3.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 3*/
+
+
+    /* ORDER MENU 4 */
+    .card4 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c4.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .card-details4 {
+      color: transparent;
+      /* Hide the text by default */
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card4:hover .card-details4 {
+      color: black;
+      /* Change the text color on hover */
+    }
+
+    .card4 .text-body4 {
+      opacity: 0;
+      /* Hide the text by default */
+      transition: opacity 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card4:hover .text-body4 {
+      opacity: 1;
+      /* Show the text on hover */
+    }
+
+
+
+    .card-button4 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card4:hover .card-button4 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button4:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button4:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button4:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body4 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title4 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card4:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card4.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+
+    /* ORDER MENU 4*/
+
+    /* ORDER MENU 5 */
+    .card5 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c5.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .card-details5 {
+      color: transparent;
+      /* Hide the text by default */
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card5:hover .card-details5 {
+      color: black;
+      /* Change the text color on hover */
+    }
+
+    .card5 .text-body5 {
+      opacity: 0;
+      /* Hide the text by default */
+      transition: opacity 0.3s ease-out;
+      /* Add transition for smooth effect */
+    }
+
+    .card5:hover .text-body5 {
+      opacity: 1;
+      /* Show the text on hover */
+    }
+
+
+
+    .card-button5 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card5:hover .card-button5 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button5:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button5:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button5:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body5 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title5 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card5:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card5.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+
+    /* ORDER MENU 5*/
+
+    /* ORDER MENU 6 */
+
+    .card6 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details6 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card6:hover .card-details6 {
+      color: black;
+    }
+
+    .card6 .text-body6 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card6:hover .text-body6 {
+      opacity: 1;
+    }
+
+    .card-button6 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card6:hover .card-button6 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button6:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button6:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button6:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body6 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title6 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card6:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card6.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+
+    /* ORDER MENU 6*/
+
+    /* ORDER MENU 7 */
+    .card7 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details7 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card7:hover .card-details7 {
+      color: black;
+    }
+
+    .card7 .text-body7 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card7:hover .text-body7 {
+      opacity: 1;
+    }
+
+    .card-button7 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card7:hover .card-button7 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button7:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button7:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button7:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body7 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title7 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card7:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card7.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 7*/
+
+    /* ORDER MENU 8 */
+    .card8 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details8 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card8:hover .card-details8 {
+      color: black;
+    }
+
+    .card8 .text-body8 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card8:hover .text-body8 {
+      opacity: 1;
+    }
+
+    .card-button8 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card8:hover .card-button8 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button8:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button8:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button8:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body8 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title8 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card8:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card8.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 8*/
+
+    /* ORDER MENU 9 */
+    .card9 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details9 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card9:hover .card-details9 {
+      color: black;
+    }
+
+    .card9 .text-body9 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card9:hover .text-body9 {
+      opacity: 1;
+    }
+
+    .card-button9 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card9:hover .card-button9 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button9:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button9:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button9:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body9 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title9 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card9:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card9.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 9*/
+
+    /* ORDER MENU 10 */
+    .card10 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details10 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card10:hover .card-details10 {
+      color: black;
+    }
+
+    .card10 .text-body10 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card10:hover .text-body10 {
+      opacity: 1;
+    }
+
+    .card-button10 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card10:hover .card-button10 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button10:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button10:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button10:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body10 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title10 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card10:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card10.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 10*/
+
+
+    /* ORDER MENU 9 */
+    .card11 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details11 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card11:hover .card-details11 {
+      color: black;
+    }
+
+    .card11 .text-body11 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card11:hover .text-body11 {
+      opacity: 1;
+    }
+
+    .card-button11 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card11:hover .card-button11 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button11:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button11:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button11:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body11 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title11 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card11:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card11.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 11*/
+
+
+    /* ORDER MENU 12 */
+    .card12 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details12 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card12:hover .card-details12 {
+      color: black;
+    }
+
+    .card12 .text-body12 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card12:hover .text-body12 {
+      opacity: 1;
+    }
+
+    .card-button12 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card12:hover .card-button12 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button12:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button12:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button12:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body13 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title12 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card12:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card12.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 12*/
+
+    /* ORDER MENU 13 */
+    .card13 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details13 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card13:hover .card-details13 {
+      color: black;
+    }
+
+    .card13 .text-body13 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card13:hover .text-body13 {
+      opacity: 1;
+    }
+
+    .card-button13 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card13:hover .card-button13 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button13:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button13:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button13:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body13 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title13 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card13:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card13.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 13*/
+
+
+    /* ORDER MENU 14 */
+    .card14 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details14 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card12:hover .card-details12 {
+      color: black;
+    }
+
+    .card14 .text-body14 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card14:hover .text-body14 {
+      opacity: 1;
+    }
+
+    .card-button14 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card14:hover .card-button14 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button14:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button14:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button14:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body14 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title14 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card14:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card14.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 14*/
+
+
+    /* ORDER MENU 12 */
+    .card15 {
+      width: 140px;
+      height: 160px;
+      border-radius: 20px;
+      background: url(c6.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 1.8rem;
+      border: 4px solid #c3c6ce;
+      transition: 0.5s ease-out;
+      overflow: visible;
+    }
+
+    .card-details15 {
+      color: transparent;
+      height: 100%;
+      gap: .5em;
+      display: grid;
+      place-content: center;
+      transition: color 0.3s ease-out;
+    }
+
+    .card15:hover .card-details15 {
+      color: black;
+    }
+
+    .card15 .text-body15 {
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .card15:hover .text-body15 {
+      opacity: 1;
+    }
+
+    .card-button15 {
+      padding: 1.1em 2em;
+      background: none;
+      border: 2px solid #fff;
+      font-size: 8px;
+      color: #131313;
+      cursor: pointer;
+      position: absolute;
+      left: center;
+      top: 95%;
+      width: 110px;
+      height: 25px;
+      overflow: hidden;
+      transition: all 0.3s;
+      border-radius: 12px;
+      background-color: #ecd448;
+      font-weight: bolder;
+      box-shadow: 0 2px 0 2px #000;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card15:hover .card-button15 {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .card-button15:before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 120%;
+      background-color: #e4d4c8;
+      top: 50%;
+      transform: skewX(30deg) translate(-150%, -50%);
+      transition: all 0.5s;
+    }
+
+    .card-button15:hover {
+      background-color: #a47551;
+      color: #fff;
+      box-shadow: 0 2px 0 2px #523a28;
+    }
+
+    .card-button15:hover:before {
+      transform: skewX(30deg) translate(150%, -50%);
+      transition-delay: 0.1s;
+    }
+
+    .text-body15 {
+      color: rgb(134, 134, 134);
+      font-size: x-large;
+      font-family: bold;
+    }
+
+    .text-title15 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .card15:hover {
+      border-color: whitesmoke;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.1);
+    }
+
+    @keyframes zoom-in {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .card15.zoom-in {
+      animation: zoom-in 1.5s ease-in-out;
+    }
+
+    /* ORDER MENU 15*/
+
+
+
+
+    /* HOME IMAGE */
+    .img-home {
+      position: absolute;
+      top: 3pc;
+      left: 41pc;
+      display: flex;
+      box-shadow: none;
+      animation: floatAnimation 3s infinite;
+    }
+
+    .img-home:hover {
+      animation-play-state: ease-out;
+    }
+
+    @keyframes floatAnimation {
+      0% {
+        transform: translate(0, px);
+      }
+
+      50% {
+        transform: translate(0, 13px);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+
+
+
+
+    /* HOME IMAGE */
+
+    .line::before {
+      content: "";
+      position: relative;
+      top: 24pc;
+      display: block;
+      width: 8pc;
+      left: 27pc;
+      border-top: 5px solid whitesmoke;
+      /* Adjust color and thickness as desired */
+      margin-top: 0px;
+      transform: rotate(90deg);
+    }
+
+    .Menutext {
+      position: relative;
+      top: 20pc;
+      left: 33pc;
+      color: #fee8d7f7;
+      font-weight: 900;
+      font-size: 40px;
+      font-family: System-ui;
+      overflow: hidden;
+    }
+
+    .Menutext2 {
+      position: relative;
+      top: 20pc;
+      left: 33pc;
+      color: #fee8d7f7;
+      font-weight: 900;
+      font-size: 40px;
+      font-family: System-ui;
+      overflow: hidden;
+    }
+
+    .animate__animated.animate__fadeInLeft {
+      --animate-duration: 2s;
+
+    }
+
+    .menu1 {
+      position: relative;
+      top: 54pc;
+      left: 8pc;
+      font-family: system-ui;
+      font-size: 50px;
+      letter-spacing: 14px;
+      font-weight: 900;
+      color: #fee8d7f7;
+    }
+
+    .line1::before {
+      content: "";
+      position: relative;
+      top: 58.7pc;
+      display: block;
+      width: 1pc;
+      left: 15.8pc;
+      border-top: 5px solid whitesmoke;
+      /* Adjust color and thickness as desired */
+      margin-top: 0px;
+      transform: rotate(90deg);
+    }
+
+    .cold1 {
+      position: relative;
+      top: 59.5pc;
+      left: 10pc;
+      font-family: system-ui;
+      font-size: 12px;
+      letter-spacing: 14px;
+      font-weight: 900;
+      color: #fee8d7f7;
+    }
+
+    .hot1 {
+      position: relative;
+      top: 60.5pc;
+      left: 18pc;
+      font-family: system-ui;
+      font-size: 12px;
+      letter-spacing: 14px;
+      font-weight: 900;
+      color: #fee8d7f7;
+    }
+
+    .menu2 {
+      position: relative;
+      top: 85pc;
+      left: 8pc;
+      font-family: system-ui;
+      font-size: 50px;
+      letter-spacing: 12px;
+      font-weight: 900;
+      color: #fee8d7f7;
+    }
+
+    .menu3 {
+      position: relative;
+      top: 112pc;
+      left: 8pc;
+      font-family: system-ui;
+      font-size: 50px;
+      letter-spacing: 12px;
+      font-weight: 900;
+      color: #fee8d7f7;
+    }
+
+    .menu4 {
+      position: relative;
+      top: 140pc;
+      left: 8pc;
+      font-family: system-ui;
+      font-size: 50px;
+      letter-spacing: 12px;
+      font-weight: 900;
+      color: #fee8d7f7;
+    }
+
+    .menu5 {
+      position: relative;
+      top: 169pc;
+      left: 8pc;
+      font-family: system-ui;
+      font-size: 50px;
+      letter-spacing: 12px;
+      font-weight: 900;
+      color: #fee8d7f7;
+    }
+
+
+
+
+    
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="menu5">TEA</div>
+
+  <div class="menu4">FRAPPE</div>
+
+  <div class="menu3">SIGNATURES</div>
+
+  <div class="menu2">ICED COFFEE</div>
+
+
+  <div class="hot1">HOT</div>
+  <div class="cold1">COLD</div>
+  <div class="line1"></div>
+  <div class="menu1">BLACK</div>
+
+
+  <h6 class="text animate__animated animate__fadeInLeft animate__delay-1s">MENU</h6>
+  <div class="line" id="Menu"></div>
+  <div class="Menutext text animate__animated animate__fadeInLeft animate__delay-1s">VOL . 3</div>
+  <div class="Menutext2 text animate__animated animate__fadeInLeft animate__delay-1s">JAVA SYNESTHESIA</div>
+
+
+  <div class="img-home">
+    <img src="image-removebg-preview.png" style="width: 24pc;" box-shadow="none">
+  </div>
+
+
+  <ul class="Navigation">
+    <h1>Lot 38 Kape. Bukid. Frappe</h1>
+    <li><a href="#Home"><b>Home</b></a></li>
+    <li><a href="#Menu"><b>Menu</b></a></li>
+    <li><a href="#CONTACT"><b>Contact</b></a></li>
+    <li><a href="#ORDER"><b>Order</b></a></li>
+  </ul>
+
+
+
+  <h2><b>It's Not Just Coffee, It's Experience.</b></h2>
+  <p>Discover Lot 38 Kape. Bukid. Frappe, a vibrant city coffeehouse,<br> where passionate baristas meticulously craft
+    the perfect
+    cup of<br>
+    coffee to awaken your senses, while our inviting atmosphere and exceptional service<br> create a space for you to
+    savor the
+    flavors and forge meaningful connections.</p>
+
+
+
+  <button>
+    <a href="https://web.facebook.com/lot38dvo">
+      <span class="box">
+        FOR MORE INFO!
+      </span>
+    </a>
+  </button>
+
+
+
+
+
+
+  <div class="card-container">
+
+    <div class="card">
+      <div class="card-details">
+        <p1 class="text-title"><b>COFFEE</b></p1>
+        <p2 class="text-body">ESPRESSO SHOT AND YOGURT</p2>
+        <img1 src="coffe1.jpg" alt="card-details">
+
+      </div>
+      <button class="card-button"><b>ADD TO CART</b></button>
+    </div>
+
+
+
+    <div class="card2">
+      <div class="card-details2">
+        <p3 class="text-title2"><b>TEA</b></p3>
+        <p4 class="text-body2">GREEN TEA WITH LEMON</p4>
+      </div>
+      <button class="card-button2"><b>ADD TO CART</b></button>
+    </div>
+
+    <div class="card3">
+      <div class="card-details3">
+        <p3 class="text-title3"><b>TEA</b></p3>
+        <p4 class="text-body3">GREEN TEA WITH LEMON</p4>
+      </div>
+      <button class="card-button3"><b>ADD TO CART</b></button>
+    </div>
+  </div>
+
+
+
+
+  </div>
+
+
+  <div class="card-container2">
+
+    <div class="card4">
+      <div class="card-details4">
+        <p5 class="text-title4"><b>TEA</b></p5>
+        <p6 class="text-body4">GREEN TEA WITH LEMON</p6>
+      </div>
+      <button class="card-button4"><b>ADD TO CART</b></button>
+    </div>
+
+
+
+
+
+    <div class="card5">
+      <div class="card-details5">
+        <p7 class="text-title5"><b>TEA</b></p7>
+        <p8 class="text-body5">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button5"><b>ADD TO CART</b></button>
+    </div>
+
+
+
+
+    <div class="card6">
+      <div class="card-details6">
+        <p7 class="text-title6"><b>TEA</b></p7>
+        <p8 class="text-body6">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button6"><b>ADD TO CART</b></button>
+    </div>
+
+
+  </div>
+
+  <div class="card-container3">
+
+
+    <div class="card7">
+      <div class="card-details7">
+        <p7 class="text-title7"><b>TEA</b></p7>
+        <p8 class="text-body7">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button7"><b>ADD TO CART</b></button>
+    </div>
+
+    <div class="card8">
+      <div class="card-details8">
+        <p7 class="text-title8"><b>TEA</b></p7>
+        <p8 class="text-body8">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button8"><b>ADD TO CART</b></button>
+    </div>
+
+    <div class="card9">
+      <div class="card-details9">
+        <p7 class="text-title9"><b>TEA</b></p7>
+        <p8 class="text-body9">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button9"><b>ADD TO CART</b></button>
+    </div>
+  </div>
+
+
+
+
+  <div class="card-container4">
+
+
+    <div class="card10">
+      <div class="card-details10">
+        <p7 class="text-title10"><b>TEA</b></p7>
+        <p8 class="text-body10">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button10"><b>ADD TO CART</b></button>
+    </div>
+
+    <div class="card11">
+      <div class="card-details11">
+        <p7 class="text-title11"><b>TEA</b></p7>
+        <p8 class="text-body11">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button11"><b>ADD TO CART</b></button>
+    </div>
+
+
+    <div class="card12">
+      <div class="card-details12">
+        <p7 class="text-title12"><b>TEA</b></p7>
+        <p8 class="text-body12">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button12"><b>ADD TO CART</b></button>
+    </div>
+  </div>
+
+  <div class="card-container5">
+
+    <div class="card13">
+      <div class="card-details13">
+        <p7 class="text-title13"><b>TEA</b></p7>
+        <p8 class="text-body13">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button13"><b>ADD TO CART</b></button>
+    </div>
+
+    <div class="card14">
+      <div class="card-details14">
+        <p7 class="text-title14"><b>TEA</b></p7>
+        <p8 class="text-body14">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button14"><b>ADD TO CART</b></button>
+    </div>
+
+
+    <div class="card15">
+      <div class="card-details15">
+        <p7 class="text-title15"><b>TEA</b></p7>
+        <p8 class="text-body15">GREEN TEA WITH LEMON</p8>
+      </div>
+      <button class="card-button15"><b>ADD TO CART</b></button>
+    </div>
+  </div>
+
+
+
+  <h4 id="Home"> HOME</h4>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card2").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card3").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card4").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card5").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card6").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card7").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card8").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card9").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card10").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card11").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card12").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card13").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card14").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        $(".card15").each(function () {
+          var elementPos = $(this).offset().top;
+          var topOfWindow = $(window).scrollTop();
+          var windowHeight = $(window).height();
+
+          if (elementPos < topOfWindow + windowHeight) {
+            $(this).addClass("zoom-in");
+          }
+        });
+      });
+    });
+
+
+
+
+
+
+    /* ADJUST SCREEN*/
+
+
+  </script>
+
+
+
+
+
+
+
+</html>
